@@ -1,0 +1,9 @@
+# fichier  sha256  adresse d'origine
+nomos8k_sc.onnx 7747a7dd0b115761cf9c34bbf67bb1e98218ff5b459492a13215c8deb046a9d0 https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/nomos8k_sc_x4.onnx
+hfa2k.onnx 5b40266cf3533a76bf88640832009d5d52d99a7121459d22ffa4996c81081d19 https://raw.githubusercontent.com/Phhofm/models/main/4xHFA2k/4xHFA2k_fp32.onnx
+lsdir.onnx 18e705caf80dcef1a15f31714802c3a537cd6ef948fbf78daabeeca5295d5e46 https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/lsdir_x4.onnx
+realesrgan_x4.onnx afa7fa42eed0315a3d7b2a54e79e4e44a672d3c0889c2828c4f84c9ab91edb0b https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/real_esrgan_x4.onnx
+realesrgan_x2.onnx 5be2d62ab3b0357986efb20a19638334c0e7a2a055ccbc52c77063da0482b3bb https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/real_esrgan_x2.onnx
+realesrgan_x8.onnx 81347256a7e0adf5e4dc4efb7bb6c44a05b04069ad6b43d026e9a20cd3b8cc1c https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/real_esrgan_x8.onnx
+swin2sr.onnx 5a797560950146389fa938bc40f63c70ad4a84d6c7cf1abb06967c3624e35280 https://github.com/facefusion/facefusion-assets/releases/download/models-3.1.0/swin2_sr_x4.onnx
+realwebphoto.onnx ac378843a6cefa190b2d4972e93a2f53f9c7277c542142f5f57babb688f8a25d https://github.com/facefusion/facefusion-assets/releases/download/models-3.1.0/real_web_photo_x4.onnx

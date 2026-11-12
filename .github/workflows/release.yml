@@ -1,0 +1,38 @@
+name: Publier les modèles
+
+# Récupère chaque modèle à sa source, vérifie son empreinte SHA-256 et le publie dans la release v1.
+on:
+  push:
+    branches: [main]
+    paths: ['sources.txt', '.github/workflows/release.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Télécharger et vérifier
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          grep -v '^#' sources.txt | while read -r name sha url; do
+            [ -n "$name" ] || continue
+            curl -fsSL --retry 3 -o "out/$name" "$url"
+            echo "$sha  out/$name" | sha256sum -c -
+          done
+          (cd out && sha256sum *.onnx > SHA256SUMS.txt && cat SHA256SUMS.txt)
+          cp README.md out/LISEZMOI-licences.md
+          cp LICENSES/*.txt out/
+      - name: Publier la release v1
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete v1 --yes --cleanup-tag || true
+          sleep 2
+          gh release create v1 out/* --target "${{ github.sha }}" --title "Modèles v1" \
+            --notes "Modèles téléchargés par l'app Cristal, identiques aux originaux. Crédits et licences : voir le README du dépôt."
